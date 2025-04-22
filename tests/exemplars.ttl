@@ -1,7 +1,7 @@
-# imports: http://example.org/shapes/sh-example
+# imports: http://example.org/shapes/sh-geo
 
 @prefix drafting: <http://example.org/ontology/drafting/> .
-@prefix ex: <http://example.org/ontology/example/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix kb: <http://example.org/kb/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -11,10 +11,397 @@
 <http://example.org/kb>
 	a owl:Ontology ;
 	rdfs:comment "This knowledge base instantiates each of the shape-reviewed classes and properties, so SHACL shapes can be exercised for the reviewed ontology."@en ;
-	owl:imports <http://example.org/shapes/sh-example> ;
+	owl:imports <http://example.org/shapes/sh-geo> ;
 	.
 
-kb:Object-76f5befa-f5e1-4b2c-8d7b-ea7cf18ecca6
-	a ex:Object ;
+kb:Feature-59e1587a-e50e-46c6-8bb7-bb882fda28c2
+	a geo:Feature ;
+	geo:hasBoundingBox kb:Geometry-5de89fc1-6fb7-4c00-8942-28986a2a7326 ;
+	.
+
+kb:Feature-611e3f05-d4e2-4192-8e7a-3a20e3483c50
+	a geo:Feature ;
+	geo:hasCentroid kb:Geometry-65172bd0-13ca-4b7f-a8b2-4d357b5ed0c2 ;
+	.
+
+kb:Feature-65bb1fb1-5c06-4795-a150-1a99425faf65
+	a geo:Feature ;
+	geo:hasDefaultGeometry kb:Geometry-65beb630-1da0-46e6-be26-d845c3a375e1 ;
+	.
+
+kb:Geometry-0494a337-3849-4f28-a972-33b1ba26629e
+	a geo:Geometry ;
+	geo:asDGGS ""^^geo:dggsLiteral ;
+	.
+
+kb:Geometry-07985c65-4388-466b-a736-45757e6b2e1b
+	a geo:Geometry ;
+	geo:asGML ""^^geo:gmlLiteral ;
+	.
+
+kb:Geometry-089d5864-6e21-43a9-861f-9f8bc3b13d6e
+	a geo:Geometry ;
+	geo:asGeoJSON ""^^geo:geoJSONLiteral ;
+	.
+
+kb:Geometry-0b3a8ade-8231-4597-94af-cab731dafdd3
+	a geo:Geometry ;
+	geo:asKML ""^^geo:kmlLiteral ;
+	.
+
+kb:Geometry-0eaf2b78-4f63-4ec2-93d7-896ff02764f4
+	a geo:Geometry ;
+	geo:asWKT ""^^geo:wktLiteral ;
+	.
+
+kb:Geometry-0f35edd0-cb47-4fc9-a4c0-4f9b01ea7f5f
+	a geo:Geometry ;
+	geo:coordinateDimension "0"^^xsd:integer ;
+	.
+
+kb:Geometry-0ff531da-8bcf-46e2-b656-4cbbc58f9a31
+	a geo:Geometry ;
+	geo:dimension "0"^^xsd:integer ;
+	.
+
+kb:Geometry-5de89fc1-6fb7-4c00-8942-28986a2a7326
+	a geo:Geometry ;
+	.
+
+kb:Geometry-65172bd0-13ca-4b7f-a8b2-4d357b5ed0c2
+	a geo:Geometry ;
+	.
+
+kb:Geometry-65beb630-1da0-46e6-be26-d845c3a375e1
+	a geo:Geometry ;
+	.
+
+kb:Geometry-822c5b24-83ce-4de9-969b-ca89df9cc6f9
+	a geo:Geometry ;
+	geo:hasMetricSpatialAccuracy "0"^^xsd:double ;
+	.
+
+kb:Geometry-822c73eb-3e06-4619-b13d-fa8709f6278e
+	a geo:Geometry ;
+	geo:hasMetricSpatialResolution "0"^^xsd:double ;
+	.
+
+kb:Geometry-98b146b1-863a-4b06-9f7f-ff6773c06f8f
+	a geo:Geometry ;
+	geo:hasSpatialAccuracy kb:Thing-9c1b9d56-2d8f-4e39-83f5-8beb965c200f ;
+	.
+
+kb:Geometry-9f80c5b5-8461-4fd8-a05a-ad33a15b0dff
+	a geo:Geometry ;
+	geo:hasSpatialResolution kb:Thing-a45376c3-8af6-4a86-9adc-18382146c5d1 ;
+	.
+
+kb:Geometry-ace3ab20-edfe-4300-810a-9baddcd9a287
+	a geo:Geometry ;
+	geo:isEmpty "true"^^xsd:boolean ;
+	.
+
+kb:Geometry-b0f84898-2b62-4519-898e-85c452249735
+	a geo:Geometry ;
+	geo:isSimple "true"^^xsd:boolean ;
+	.
+
+kb:Geometry-ffb4fb75-cc56-4826-8bf2-12d8b2c95722
+	a geo:Geometry ;
+	geo:spatialDimension "1"^^xsd:integer ;
+	.
+
+kb:SpatialObject-1324a6ba-7156-4615-a533-d26d11acd72f
+	a geo:SpatialObject ;
+	geo:ehContains kb:SpatialObject-14898011-ca4c-4970-b898-6db6d0e554b0 ;
+	.
+
+kb:SpatialObject-14898011-ca4c-4970-b898-6db6d0e554b0
+	a geo:SpatialObject ;
+	.
+
+kb:SpatialObject-17f1dfb7-588c-44fb-9c51-eac972b25e9c
+	a geo:SpatialObject ;
+	geo:ehCoveredBy kb:SpatialObject-2192999a-8832-4242-88b4-df5a42df4f92 ;
+	.
+
+kb:SpatialObject-2192999a-8832-4242-88b4-df5a42df4f92
+	a geo:SpatialObject ;
+	.
+
+kb:SpatialObject-2cf9caf2-1989-49e6-bfcc-988449ee5243
+	a geo:SpatialObject ;
+	geo:ehCovers kb:SpatialObject-2e27a7ff-1f2b-483f-be51-36b2f28abbc6 ;
+	.
+
+kb:SpatialObject-2e27a7ff-1f2b-483f-be51-36b2f28abbc6
+	a geo:SpatialObject ;
+	.
+
+kb:SpatialObject-2f31ae9d-5ba2-4237-9753-f5fa2d169f3c
+	a geo:SpatialObject ;
+	geo:ehDisjoint kb:SpatialObject-33ca8958-2d4f-4b6a-90c4-0940db068fb8 ;
+	.
+
+kb:SpatialObject-33ca8958-2d4f-4b6a-90c4-0940db068fb8
+	a geo:SpatialObject ;
+	.
+
+kb:SpatialObject-3c794284-dada-4d79-9826-cf05cceb5c5c
+	a geo:SpatialObject ;
+	geo:ehEquals kb:SpatialObject-3d40b6e9-ec90-4f9c-94c4-875b03dc8186 ;
+	.
+
+kb:SpatialObject-3d40b6e9-ec90-4f9c-94c4-875b03dc8186
+	a geo:SpatialObject ;
+	.
+
+kb:SpatialObject-3ebcd03a-ffb2-4700-9ab6-da6bd061b1cd
+	a geo:SpatialObject ;
+	geo:ehInside kb:SpatialObject-40543eb1-5bdb-4133-a548-76e5ec502f31 ;
+	.
+
+kb:SpatialObject-40543eb1-5bdb-4133-a548-76e5ec502f31
+	a geo:SpatialObject ;
+	.
+
+kb:SpatialObject-42845d0d-6527-49c4-b2f5-438bb6755146
+	a geo:SpatialObject ;
+	geo:ehMeet kb:SpatialObject-42f02316-8cb3-4e08-b953-a610ed263b55 ;
+	.
+
+kb:SpatialObject-42f02316-8cb3-4e08-b953-a610ed263b55
+	a geo:SpatialObject ;
+	.
+
+kb:SpatialObject-4bcc11ac-da41-4707-ba32-9be5931c461b
+	a geo:SpatialObject ;
+	geo:ehOverlap kb:SpatialObject-4e37154e-6a92-4b14-b607-ce028bb65cfe ;
+	.
+
+kb:SpatialObject-4e37154e-6a92-4b14-b607-ce028bb65cfe
+	a geo:SpatialObject ;
+	.
+
+kb:SpatialObject-4f3f5acb-9ae0-42a1-b325-bc64b51080fd
+	a geo:SpatialObject ;
+	geo:hasArea kb:Thing-5290d266-e7be-4082-afb3-c6e3bfc9ab46 ;
+	.
+
+kb:SpatialObject-676b0caa-7ffd-4e40-99ae-a6ddd63b4de6
+	a geo:SpatialObject ;
+	geo:hasLength kb:Thing-70c5c4a0-6933-4a15-8131-a0444538385e ;
+	.
+
+kb:SpatialObject-71cc650e-6b53-49e8-859c-5b660dc90f01
+	a geo:SpatialObject ;
+	geo:hasMetricArea "0"^^xsd:double ;
+	.
+
+kb:SpatialObject-74d62b15-7d2e-471f-a86e-7f908aff92c1
+	a geo:SpatialObject ;
+	geo:hasMetricLength "0"^^xsd:double ;
+	.
+
+kb:SpatialObject-7dfe0c62-5da0-4e01-bc30-4a91fcbefb80
+	a geo:SpatialObject ;
+	geo:hasMetricPerimeterLength "0"^^xsd:double ;
+	.
+
+kb:SpatialObject-800a1fa8-24f0-42fa-a5aa-ca23d1eee4fb
+	a geo:SpatialObject ;
+	geo:hasMetricSize "0"^^xsd:double ;
+	.
+
+kb:SpatialObject-8326a203-94cb-4b29-b7b1-04b22bd3105b
+	a geo:SpatialObject ;
+	geo:hasMetricVolume "0"^^xsd:double ;
+	.
+
+kb:SpatialObject-870e98bb-64cc-4fd8-9d23-8b52b5b9de26
+	a geo:SpatialObject ;
+	geo:hasPerimeterLength kb:Thing-897806be-2c7c-44b9-98d0-accb2a97cbf2 ;
+	.
+
+kb:SpatialObject-897ff938-586f-4909-9620-2bc5c085e9c7
+	a geo:SpatialObject ;
+	geo:hasSize kb:Thing-8cd09fc8-df48-4b2a-9a91-2dd20c2f419e ;
+	.
+
+kb:SpatialObject-a4b886d5-0efb-4261-84a6-704b22c5c369
+	a geo:SpatialObject ;
+	geo:hasVolume kb:Thing-a94d1b87-25d6-4785-90e7-e93fc3a9a5e8 ;
+	.
+
+kb:SpatialObject-bdc1d206-a4b2-48f6-a1bf-ef6347c88390
+	a geo:SpatialObject ;
+	geo:rcc8dc kb:SpatialObject-c0565d61-f5b3-403a-871d-576bcf5d3361 ;
+	.
+
+kb:SpatialObject-c0565d61-f5b3-403a-871d-576bcf5d3361
+	a geo:SpatialObject ;
+	.
+
+kb:SpatialObject-c55aafd9-0285-4dad-99f2-578d963f98e7
+	a geo:SpatialObject ;
+	geo:rcc8ec kb:SpatialObject-c668a181-5456-4332-8091-6951ba9950a7 ;
+	.
+
+kb:SpatialObject-c668a181-5456-4332-8091-6951ba9950a7
+	a geo:SpatialObject ;
+	.
+
+kb:SpatialObject-c6d7656d-a0c3-4b75-a092-ddde43007835
+	a geo:SpatialObject ;
+	geo:rcc8eq kb:SpatialObject-c6de02a2-e05f-45ff-b614-cf9508dece0b ;
+	.
+
+kb:SpatialObject-c6de02a2-e05f-45ff-b614-cf9508dece0b
+	a geo:SpatialObject ;
+	.
+
+kb:SpatialObject-c7f61d56-e79b-4959-bce4-835e5b7ad68a
+	a geo:SpatialObject ;
+	geo:rcc8ntpp kb:SpatialObject-c996ad75-c4e7-49a1-a41d-f7accf86a98b ;
+	.
+
+kb:SpatialObject-c996ad75-c4e7-49a1-a41d-f7accf86a98b
+	a geo:SpatialObject ;
+	.
+
+kb:SpatialObject-ca47fbb0-ddcd-4b49-825b-0ea6d58c4330
+	a geo:SpatialObject ;
+	geo:rcc8ntppi kb:SpatialObject-cd79624b-db4b-4c93-b05f-c30995bf37f7 ;
+	.
+
+kb:SpatialObject-cd79624b-db4b-4c93-b05f-c30995bf37f7
+	a geo:SpatialObject ;
+	.
+
+kb:SpatialObject-cddfcad5-ee83-4614-9bb8-789d1e834f39
+	a geo:SpatialObject ;
+	geo:rcc8po kb:SpatialObject-cf51639a-c7ec-4237-80e0-47857f0795f7 ;
+	.
+
+kb:SpatialObject-cf51639a-c7ec-4237-80e0-47857f0795f7
+	a geo:SpatialObject ;
+	.
+
+kb:SpatialObject-cf907401-5967-4d6e-8bbe-aa097c6fe048
+	a geo:SpatialObject ;
+	geo:rcc8tpp kb:SpatialObject-d06dba03-990e-4e52-917b-5b5bdc38c307 ;
+	.
+
+kb:SpatialObject-d06dba03-990e-4e52-917b-5b5bdc38c307
+	a geo:SpatialObject ;
+	.
+
+kb:SpatialObject-d12f8f2f-d2f6-4144-a1d1-f441c5b5aa37
+	a geo:SpatialObject ;
+	geo:rcc8tppi kb:SpatialObject-d17aee85-8ea2-4f78-a561-cf4d4721ac39 ;
+	.
+
+kb:SpatialObject-d17aee85-8ea2-4f78-a561-cf4d4721ac39
+	a geo:SpatialObject ;
+	.
+
+kb:SpatialObject-d393cd75-3a87-4d9b-b638-84a811647fb8
+	a geo:SpatialObject ;
+	geo:sfContains kb:SpatialObject-d519c661-8a9a-4d52-8825-8b2799c765a9 ;
+	.
+
+kb:SpatialObject-d519c661-8a9a-4d52-8825-8b2799c765a9
+	a geo:SpatialObject ;
+	.
+
+kb:SpatialObject-d99bb1d2-585f-4d95-82c4-7e44be05498f
+	a geo:SpatialObject ;
+	geo:sfCrosses kb:SpatialObject-d9de431f-da5a-4511-8824-22ae055ce609 ;
+	.
+
+kb:SpatialObject-d9de431f-da5a-4511-8824-22ae055ce609
+	a geo:SpatialObject ;
+	.
+
+kb:SpatialObject-d9f62382-ff07-49cd-971f-c920afe2fb43
+	a geo:SpatialObject ;
+	geo:sfDisjoint kb:SpatialObject-dc72e6c6-f7f9-4fc7-bc0d-8587beb7dad7 ;
+	.
+
+kb:SpatialObject-dc72e6c6-f7f9-4fc7-bc0d-8587beb7dad7
+	a geo:SpatialObject ;
+	.
+
+kb:SpatialObject-dc8bc2a6-5e9e-4a0a-a9c7-83c3e53c63d6
+	a geo:SpatialObject ;
+	geo:sfEquals kb:SpatialObject-defdfd6f-84cf-47a1-ba9b-01e6deae42ca ;
+	.
+
+kb:SpatialObject-defdfd6f-84cf-47a1-ba9b-01e6deae42ca
+	a geo:SpatialObject ;
+	.
+
+kb:SpatialObject-dfc9a541-ef6c-4d63-848d-1d0b9ca1ae82
+	a geo:SpatialObject ;
+	geo:sfIntersects kb:SpatialObject-e1d3fded-5ea3-42cb-96d6-392bb86c0132 ;
+	.
+
+kb:SpatialObject-e1d3fded-5ea3-42cb-96d6-392bb86c0132
+	a geo:SpatialObject ;
+	.
+
+kb:SpatialObject-e7096a29-02ae-4244-89ed-d4a4843a4cd4
+	a geo:SpatialObject ;
+	geo:sfOverlaps kb:SpatialObject-e7809e0c-4bf6-43be-90b3-159ffb35d078 ;
+	.
+
+kb:SpatialObject-e7809e0c-4bf6-43be-90b3-159ffb35d078
+	a geo:SpatialObject ;
+	.
+
+kb:SpatialObject-e80b6ac0-a868-4b73-a114-502a18e84ad9
+	a geo:SpatialObject ;
+	geo:sfTouches kb:SpatialObject-e8a53a76-12a6-4020-9fab-74fe835de297 ;
+	.
+
+kb:SpatialObject-e8a53a76-12a6-4020-9fab-74fe835de297
+	a geo:SpatialObject ;
+	.
+
+kb:SpatialObject-ea3a1bf7-b29b-46ba-b0e2-4a6ac107f9a5
+	a geo:SpatialObject ;
+	geo:sfWithin kb:SpatialObject-ec1472bd-c739-4a1a-beeb-1dd138966a2a ;
+	.
+
+kb:SpatialObject-ec1472bd-c739-4a1a-beeb-1dd138966a2a
+	a geo:SpatialObject ;
+	.
+
+kb:Thing-5290d266-e7be-4082-afb3-c6e3bfc9ab46
+	a owl:Thing ;
+	.
+
+kb:Thing-70c5c4a0-6933-4a15-8131-a0444538385e
+	a owl:Thing ;
+	.
+
+kb:Thing-897806be-2c7c-44b9-98d0-accb2a97cbf2
+	a owl:Thing ;
+	.
+
+kb:Thing-8cd09fc8-df48-4b2a-9a91-2dd20c2f419e
+	a owl:Thing ;
+	.
+
+kb:Thing-9c1b9d56-2d8f-4e39-83f5-8beb965c200f
+	a owl:Thing ;
+	.
+
+kb:Thing-a45376c3-8af6-4a86-9adc-18382146c5d1
+	a owl:Thing ;
+	.
+
+kb:Thing-a94d1b87-25d6-4785-90e7-e93fc3a9a5e8
+	a owl:Thing ;
 	.
 

@@ -2,3 +2,7 @@
 	path = dependencies/UCO
 	url = https://github.com/ucoProject/UCO.git
 	branch = master
+[submodule "dependencies/ogc-geosparql"]
+	path = dependencies/ogc-geosparql
+	url = https://github.com/opengeospatial/ogc-geosparql.git
+	branch = main
