@@ -5,4 +5,4 @@
 [submodule "dependencies/ogc-geosparql"]
 	path = dependencies/ogc-geosparql
 	url = https://github.com/opengeospatial/ogc-geosparql.git
-	branch = main
+	branch = master
