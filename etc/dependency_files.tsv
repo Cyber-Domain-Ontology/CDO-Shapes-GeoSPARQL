@@ -1,2 +1,3 @@
 http://www.opengis.net/ont/geosparql/1.1	${top_srcdir}/dependencies/geo.ttl
+http://www.opengis.net/ont/geosparql/validator/1.1	${top_srcdir}/dependencies/validator.ttl
 http://example.org/shapes/sh-geo	${top_srcdir}/shapes/sh-geo.ttl

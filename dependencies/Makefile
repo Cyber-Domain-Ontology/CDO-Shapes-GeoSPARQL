@@ -79,7 +79,8 @@ geo.ttl: \
 # command but for RDF graph files, will combine all recipe dependencies
 # into one file, using the $^ ("all dependencies") Make variable.
 imports-transitive.ttl: \
-  geo.ttl
+  geo.ttl \
+  validator.ttl
 	source $(top_srcdir)/venv/bin/activate \
 	  && rdfpipe \
 	    --output-format turtle \
@@ -92,4 +93,20 @@ imports-transitive.ttl: \
 	  --target _$@ \
 	  --target-format turtle
 	rm __$@
+	mv _$@ $@
+
+validator.ttl: \
+  ogc-geosparql/vocabularies/validator.ttl \
+  $(RDF_TOOLKIT_JAR) \
+  $(top_srcdir)/.venv.done.log
+	source $(top_srcdir)/venv/bin/activate \
+	  && pyshacl \
+	    --shacl UCO/ontology/owl/owl.ttl \
+	    $<
+	java -jar $(RDF_TOOLKIT_JAR) \
+	  --inline-blank-nodes \
+	  --source $< \
+	  --source-format turtle \
+	  --target _$@ \
+	  --target-format turtle
 	mv _$@ $@
