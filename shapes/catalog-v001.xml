@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="public">
+    <uri id="User Entered Import Resolution" uri="../dependencies/UCO/ontology/owl/owl.ttl" name="https://ontology.unifiedcyberontology.org/owl"/>
     <uri id="User Entered Import Resolution" uri="../dependencies/UCO/ontology/owl/owl.ttl" name="https://ontology.unifiedcyberontology.org/owl/1.4.0"/>
-    <uri id="User Entered Import Resolution" uri="../dependencies/geo.ttl" name="http://www.opengis.net/ont/geosparql/1.1"/>
-    <uri id="User Entered Import Resolution" uri="../dependencies/validator.ttl" name="http://www.opengis.net/ont/geosparql/validator/1.1"/>
+    <uri id="User Entered Import Resolution" uri="../dependencies/formatted-geo.ttl" name="http://www.opengis.net/ont/geosparql/1.1"/>
+    <uri id="User Entered Import Resolution" uri="../dependencies/formatted-validator.ttl" name="http://www.opengis.net/ont/geosparql/validator/1.1"/>
     <uri id="User Entered Import Resolution" uri="sh-geo.ttl" name="http://example.org/shapes/sh-geo"/>
 </catalog>

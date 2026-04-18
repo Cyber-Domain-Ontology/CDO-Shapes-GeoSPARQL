@@ -22,6 +22,15 @@ uco_srcdir := $(top_srcdir)/dependencies/UCO
 
 RDF_TOOLKIT_JAR := $(uco_srcdir)/lib/rdf-toolkit.jar
 
+# TODO: This variable lists files for Make to generate and delete on
+# 'make clean' calls.  This variable should be adapted to list each file
+# to normalize.
+# Note that to support the catalog-v001.xml preconditions, this list
+# must only be files in this directory.
+normalized_ttls := \
+  formatted-geo.ttl \
+  formatted-validator.ttl
+
 all: \
   catalog-v001.xml
 
@@ -31,11 +40,11 @@ $(RDF_TOOLKIT_JAR):
 	@test -r $@
 
 catalog-v001.xml: \
+  $(normalized_ttls) \
   $(top_srcdir)/.venv.done.log \
   $(top_srcdir)/etc/domain_directories.tsv \
   $(top_srcdir)/etc/dependency_files.tsv \
-  $(top_srcdir)/src/create-catalog-v001.xml.py \
-  imports-transitive.ttl
+  $(top_srcdir)/src/create-catalog-v001.xml.py
 	rm -f _$@
 	source $(top_srcdir)/venv/bin/activate \
 	  && python3 $(top_srcdir)/src/create-catalog-v001.xml.py \
@@ -43,19 +52,18 @@ catalog-v001.xml: \
 	    $(top_srcdir)/etc/domain_directories.tsv \
 	    $(top_srcdir)/etc/dependency_files.tsv \
 	    "$(top_srcdir)" \
-	    imports-transitive.ttl
+	    $(normalized_ttls)
 	mv _$@ $@
 
 check: \
-  catalog-v001.xml
+  all
 
 clean:
 	@rm -f \
-	  catalog-v001.xml \
-	  geo.ttl \
-	  imports-transitive.ttl
+	  $(normalized_ttls) \
+	  catalog-v001.xml
 
-geo.ttl: \
+formatted-geo.ttl: \
   ogc-geosparql/vocabularies/geo.ttl \
   $(RDF_TOOLKIT_JAR) \
   $(top_srcdir)/.venv.done.log
@@ -71,31 +79,7 @@ geo.ttl: \
 	  --target-format turtle
 	mv _$@ $@
 
-# This recipe intentionally does not incorporate CDO ontologies (UCO,
-# CASE, etc.), to avoid redundant imports between multiple profiles.
-# TODO: Adapt this recipe to depend instead on the normalized file, as
-# well as any profile submodules' imports-transitive files.
-# Note that the piping command, analagous to the concatenate ('cat')
-# command but for RDF graph files, will combine all recipe dependencies
-# into one file, using the $^ ("all dependencies") Make variable.
-imports-transitive.ttl: \
-  geo.ttl \
-  validator.ttl
-	source $(top_srcdir)/venv/bin/activate \
-	  && rdfpipe \
-	    --output-format turtle \
-	    $^ \
-	    > __$@
-	java -jar $(RDF_TOOLKIT_JAR) \
-	  --inline-blank-nodes \
-	  --source __$@ \
-	  --source-format turtle \
-	  --target _$@ \
-	  --target-format turtle
-	rm __$@
-	mv _$@ $@
-
-validator.ttl: \
+formatted-validator.ttl: \
   ogc-geosparql/vocabularies/validator.ttl \
   $(RDF_TOOLKIT_JAR) \
   $(top_srcdir)/.venv.done.log
