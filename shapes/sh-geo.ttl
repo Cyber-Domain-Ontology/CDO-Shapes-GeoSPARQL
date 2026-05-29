@@ -1,5 +1,5 @@
+# imports: http://www.opengis.net/def/geosparql/validator/1.1
 # imports: http://www.opengis.net/ont/geosparql/1.1
-# imports: http://www.opengis.net/ont/geosparql/validator/1.1
 # imports: https://ontology.unifiedcyberontology.org/owl/1.4.0
 
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
@@ -14,8 +14,8 @@
 <http://example.org/shapes/sh-geo>
 	a owl:Ontology ;
 	owl:imports
+		<http://www.opengis.net/def/geosparql/validator/1.1> ,
 		<http://www.opengis.net/ont/geosparql/1.1> ,
-		<http://www.opengis.net/ont/geosparql/validator/1.1> ,
 		uco-owl:1.4.0
 		;
 	.
