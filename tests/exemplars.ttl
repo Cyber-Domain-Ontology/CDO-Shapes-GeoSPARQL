@@ -1,4 +1,4 @@
-# imports: http://example.org/shapes/sh-geo
+# imports: http://www.opengis.net/ont/geosparql/1.1
 
 @prefix drafting: <http://example.org/ontology/drafting/> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
@@ -6,12 +6,14 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://example.org/kb>
 	a owl:Ontology ;
 	rdfs:comment "This knowledge base instantiates each of the shape-reviewed classes and properties, so SHACL shapes can be exercised for the reviewed ontology."@en ;
-	owl:imports <http://example.org/shapes/sh-geo> ;
+	owl:imports <http://www.opengis.net/ont/geosparql/1.1> ;
+	sh:shapesGraph <http://example.org/shapes/sh-geo> ;
 	.
 
 kb:Feature-59e1587a-e50e-46c6-8bb7-bb882fda28c2
