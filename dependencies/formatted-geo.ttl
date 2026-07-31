@@ -3,98 +3,113 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix sdo: <https://schema.org/> .
+@prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix spec11: <http://www.opengis.net/spec/geosparql/1.1/specification.html#> .
+@prefix spec11: <http://www.opengis.net/doc/IS/geosparql/1.1#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://www.opengis.net/ont/geosparql>
 	a owl:Ontology ;
-	dcterms:contributor
-		[
-			a sdo:Person ;
-			sdo:affiliation
-				"Australian National University" ,
-				"SURROUND Australia Pty Ltd"
-				;
-			sdo:email "nicholas.car@surroundaustralia.com" ;
-			sdo:name "Nicholas J. Car" ;
-			sdo:url "https://orcid.org/0000-0002-8742-7730"^^xsd:anyURI ;
-		] ,
-		[
-			a sdo:Person ;
-			sdo:affiliation "CSIRO Australia" ;
-			sdo:email "simon.cox@csiro.au" ;
-			sdo:name "Simon J D Cox" ;
-			sdo:url "https://orcid.org/0000-0002-3884-3420"^^xsd:anyURI ;
-		] ,
-		[
-			a sdo:Person ;
-			sdo:affiliation "Geoscape Australia" ;
-			sdo:email "joseph.abhayaratna@geoscape.com.au" ;
-			sdo:name "Joseph Abhayaratna" ;
-			sdo:url "https://orcid.org/0000-0001-5075-6234"^^xsd:anyURI ;
-		] ,
-		[
-			a sdo:Person ;
-			sdo:affiliation
-				"KU Leuven" ,
-				"Neanex Technologies"
-				;
-			sdo:email "mathias.bonduel@neanex.com" ;
-			sdo:name "Mathias Bonduel" ;
-			sdo:url "https://orcid.org/0000-0002-3313-924X"^^xsd:anyURI ;
-		] ,
-		[
-			a sdo:Person ;
-			sdo:affiliation "Mainz University Of Applied Sciences" ;
-			sdo:email "timo.homburg@hs-mainz.de" ;
-			sdo:name "Timo Homburg" ;
-			sdo:url "https://orcid.org/0000-0002-9499-5840"^^xsd:anyURI ;
-		] ,
-		[
-			a sdo:Person ;
-			sdo:affiliation "Oracle Corporation" ;
-			sdo:email "john.herring@oracle.com" ;
-			sdo:name "John Herring" ;
-		] ,
-		[
-			a sdo:Person ;
-			sdo:affiliation "Oracle Corporation" ;
-			sdo:email "matthew.perry@oracle.com" ;
-			sdo:name "Matthew Perry" ;
-			sdo:url "https://orcid.org/0000-0003-1988-462X"^^xsd:anyURI ;
-		] ,
-		[
-			a sdo:Person ;
-			sdo:email "fjknibbe@gmail.com" ;
-			sdo:name "Frans Knibbe" ;
-			sdo:url "https://orcid.org/0000-0003-3789-2260"^^xsd:anyURI ;
-		]
-		;
-	dcterms:created "2020-09-09"^^xsd:date ;
-	dcterms:creator "OGC GeoSPARQL Standards Working Group" ;
-	dcterms:description "An RDF/OWL vocabulary for representing spatial information"@en ;
-	dcterms:license "https://www.ogc.org/license"^^xsd:anyURI ;
-	dcterms:modified "2021-10-27"^^xsd:date ;
-	dcterms:publisher [
-		a sdo:Organization ;
-		sdo:name "Open Geospatial Consortium" ;
-		sdo:url "https://www.ogc.org"^^xsd:anyURI ;
-	] ;
 	dcterms:replaces <http://www.opengis.net/ont/geosparql/1.0> ;
-	dcterms:rights "(c) 2021 Open Geospatial Consortium" ;
-	dcterms:source
-		"OGC GeoSPARQL - A Geographic Query Language for RDF Data OGC 11-052r5"@en ,
-		<http://www.opengis.net/doc/IS/geosparql/1.1>
-		;
-	dcterms:title "GeoSPARQL Ontology" ;
 	vann:preferredNamespacePrefix "geo" ;
 	vann:preferredNamespaceUri "http://www.opengis.net/ont/geosparql#"^^xsd:anyURI ;
-	rdfs:seeAlso <http://www.opengis.net/doc/IS/geosparql/1.1> ;
-	owl:versionIRI <http://www.opengis.net/ont/geosparql/1.1> ;
-	owl:versionInfo "OGC GeoSPARQL 1.1" ;
+	rdfs:member
+		:Feature ,
+		:FeatureCollection ,
+		:Geometry ,
+		:GeometryCollection ,
+		:SpatialObject ,
+		:SpatialObjectCollection ,
+		:asDGGS ,
+		:asGML ,
+		:asGeoJSON ,
+		:asKML ,
+		:asWKT ,
+		:coordinateDimension ,
+		:defaultGeometry ,
+		:dggsLiteral ,
+		:dimension ,
+		:ehContains ,
+		:ehCoveredBy ,
+		:ehCovers ,
+		:ehDisjoint ,
+		:ehEquals ,
+		:ehInside ,
+		:ehMeet ,
+		:ehOverlap ,
+		:geoJSONLiteral ,
+		:gmlLiteral ,
+		:hasArea ,
+		:hasBoundingBox ,
+		:hasCentroid ,
+		:hasDefaultGeometry ,
+		:hasGeometry ,
+		:hasLength ,
+		:hasMetricArea ,
+		:hasMetricLength ,
+		:hasMetricPerimeterLength ,
+		:hasMetricSize ,
+		:hasMetricSpatialAccuracy ,
+		:hasMetricSpatialResolution ,
+		:hasMetricVolume ,
+		:hasPerimeterLength ,
+		:hasSerialization ,
+		:hasSize ,
+		:hasSpatialAccuracy ,
+		:hasSpatialResolution ,
+		:hasVolume ,
+		:isEmpty ,
+		:isSimple ,
+		:kmlLiteral ,
+		:rcc8dc ,
+		:rcc8ec ,
+		:rcc8eq ,
+		:rcc8ntpp ,
+		:rcc8ntppi ,
+		:rcc8po ,
+		:rcc8tpp ,
+		:rcc8tppi ,
+		:sfContains ,
+		:sfCrosses ,
+		:sfDisjoint ,
+		:sfEquals ,
+		:sfIntersects ,
+		:sfOverlaps ,
+		:sfTouches ,
+		:sfWithin ,
+		:spatialDimension ,
+		:wktLiteral
+		;
+	owl:versionIRI :1.1 ;
+	owl:versionInfo """1.1.1 - 2026-02 - minor metadata changes to ensure Rainbow display
+
+1.1 - version as originally published with GeoSPARQL 1.1
+""" ;
+	schema:citation "http://www.opengis.net/doc/IS/geosparql/1.1"^^xsd:anyURI ;
+	schema:contributor
+		<https://orcid.org/0000-0002-3313-924X> ,
+		<https://orcid.org/0000-0002-8742-7730> ,
+		<https://orcid.org/0000-0002-9499-5840> ,
+		<https://orcid.org/0000-0003-1988-462X> ,
+		<https://orcid.org/0000-0003-3789-2260> ,
+		<mailto:john.herring@oracle.com> ,
+		<mailto:joseph.abhayaratna@geoscape.com.au> ,
+		<ttps://orcid.org/0000-0002-3884-3420>
+		;
+	schema:copyrightNotice "(c) 2021 Open Geospatial Consortium" ;
+	schema:creator <https://defs.opengis.net/org/geosparql-swg> ;
+	schema:dateCreated "2020-09-09"^^xsd:date ;
+	schema:dateIssued "2025-11-19"^^xsd:date ;
+	schema:dateModified "2021-10-27"^^xsd:date ;
+	schema:description "An RDF/OWL vocabulary for representing spatial information"@en ;
+	schema:license <http://purl.org/NET/rdflicense/:APACHE2.0> ;
+	schema:name "GeoSPARQL Ontology" ;
+	schema:publisher <https://defs.opengis.net/org/ogc> ;
+	.
+
+:1.1
+	schema:name "1.1" ;
 	.
 
 :Feature
@@ -109,25 +124,25 @@
 		<http://www.opengis.net/spec/geosparql/1.1/req/core/feature-class>
 		;
 	owl:disjointWith :Geometry ;
-	skos:definition "A discrete spatial phenomenon in a universe of discourse."@en ;
 	skos:example
-		spec11:C.1.1.2.1 ,
-		spec11:C.1.1.2.2 ,
-		spec11:C.1.1.2.3 ,
-		spec11:C.1.1.2.4 ,
-		spec11:C.1.1.2.5 ,
-		spec11:C.1.1.2.6 ,
-		spec11:C.1.1.2.7 ,
-		spec11:C.1.1.2.8 ,
-		spec11:C.1.1.2.9 ,
-		spec11:C.1.1.3.2 ,
-		spec11:C.1.1.3.3 ,
-		spec11:C.1.2.2 ,
-		spec11:C.1.2.3 ,
-		spec11:C.1.2.4
+		spec11:B.1.1.2.1 ,
+		spec11:B.1.1.2.2 ,
+		spec11:B.1.1.2.3 ,
+		spec11:B.1.1.2.4 ,
+		spec11:B.1.1.2.5 ,
+		spec11:B.1.1.2.6 ,
+		spec11:B.1.1.2.7 ,
+		spec11:B.1.1.2.8 ,
+		spec11:B.1.1.2.9 ,
+		spec11:B.1.1.3.2 ,
+		spec11:B.1.1.3.3 ,
+		spec11:B.1.2.2 ,
+		spec11:B.1.2.3 ,
+		spec11:B.1.2.4
 		;
 	skos:note "A Feature represents a uniquely identifiable phenomenon, for example a river or an apple. While such phenomena (and therefore the Features used to represent them) are bounded, their boundaries may be crisp (e.g., the declared boundaries of a state), vague (e.g., the delineation of a valley versus its neighboring mountains), and change with time (e.g., a storm front). While discrete in nature, Features may be created from continuous observations, such as an isochrone that determines the region that can be reached by ambulance within 5 minutes."@en ;
-	skos:prefLabel "Feature"@en ;
+	schema:description "A discrete spatial phenomenon in a universe of discourse."@en ;
+	schema:name "Feature"@en ;
 	.
 
 :FeatureCollection
@@ -147,9 +162,9 @@
 		<http://www.opengis.net/ont/geosparql#> ,
 		<http://www.opengis.net/spec/geosparql/1.1/req/core/feature-collection-class>
 		;
-	skos:definition "A collection of individual Features."@en ;
-	skos:example spec11:C.1.1.6 ;
-	skos:prefLabel "Feature Collection"@en ;
+	skos:example spec11:B.1.1.6 ;
+	schema:description "A collection of individual Features."@en ;
+	schema:name "Feature Collection"@en ;
 	.
 
 :Geometry
@@ -163,23 +178,23 @@
 		<http://www.opengis.net/spec/geosparql/1.0/req/geometry-extension/geometry-class> ,
 		<http://www.opengis.net/spec/geosparql/1.1/req/geometry-extension/geometry-class>
 		;
-	skos:definition "A coherent set of direct positions in space. The positions are held within a Spatial Reference System (SRS)."@en ;
 	skos:example
-		spec11:C.1.1.2.2 ,
-		spec11:C.1.1.2.3 ,
-		spec11:C.1.1.2.4 ,
-		spec11:C.1.1.2.5 ,
-		spec11:C.1.1.2.6 ,
-		spec11:C.1.1.2.8 ,
-		spec11:C.1.1.3.1 ,
-		spec11:C.1.1.3.2 ,
-		spec11:C.1.1.3.3 ,
-		spec11:C.1.2.2 ,
-		spec11:C.1.2.3 ,
-		spec11:C.1.2.4
+		spec11:B.1.1.2.2 ,
+		spec11:B.1.1.2.3 ,
+		spec11:B.1.1.2.4 ,
+		spec11:B.1.1.2.5 ,
+		spec11:B.1.1.2.6 ,
+		spec11:B.1.1.2.8 ,
+		spec11:B.1.1.3.1 ,
+		spec11:B.1.1.3.2 ,
+		spec11:B.1.1.3.3 ,
+		spec11:B.1.2.2 ,
+		spec11:B.1.2.3 ,
+		spec11:B.1.2.4
 		;
 	skos:note "Geometry can be used as a representation of the shape, extent or location of a Feature and may exist as a self-contained entity."@en ;
-	skos:prefLabel "Geometry"@en ;
+	schema:description "A coherent set of direct positions in space. The positions are held within a Spatial Reference System (SRS)."@en ;
+	schema:name "Geometry"@en ;
 	.
 
 :GeometryCollection
@@ -199,9 +214,9 @@
 		<http://www.opengis.net/ont/geosparql#> ,
 		<http://www.opengis.net/spec/geosparql/1.1/req/core/geometry-collection-class>
 		;
-	skos:definition "A collection of individual Geometries."@en ;
-	skos:example spec11:C.1.1.7 ;
-	skos:prefLabel "Geometry Collection"@en ;
+	skos:example spec11:B.1.1.7 ;
+	schema:description "A collection of individual Geometries."@en ;
+	schema:name "Geometry Collection"@en ;
 	.
 
 :SpatialObject
@@ -214,13 +229,13 @@
 		<http://www.opengis.net/spec/geosparql/1.0/req/core/spatial-object-class> ,
 		<http://www.opengis.net/spec/geosparql/1.1/req/core/spatial-object-class>
 		;
-	skos:definition "Anything spatial (being or having a shape, position or an extent)."@en ;
 	skos:example
-		spec11:C.1.1.1.1 ,
-		spec11:C.1.1.1.2
+		spec11:B.1.1.1.1 ,
+		spec11:B.1.1.1.2
 		;
 	skos:note "Subclasses of this class are expected to be used for instance data."@en ;
-	skos:prefLabel "Spatial Object"@en ;
+	schema:description "Anything spatial (being or having a shape, position or an extent)."@en ;
+	schema:name "Spatial Object"@en ;
 	.
 
 :SpatialObjectCollection
@@ -240,9 +255,9 @@
 		<http://www.opengis.net/ont/geosparql#> ,
 		<http://www.opengis.net/spec/geosparql/1.1/req/core/spatial-object-collection-class>
 		;
-	skos:definition "A collection of individual Spatial Objects."@en ;
 	skos:note "This is the superclass of Feature Collection and Geometry Collection."@en ;
-	skos:prefLabel "Spatial Object Collection"@en ;
+	schema:description "A collection of individual Spatial Objects."@en ;
+	schema:name "Spatial Object Collection"@en ;
 	.
 
 :asDGGS
@@ -257,9 +272,9 @@
 		<http://www.opengis.net/spec/geosparql/1.1/req/geometry-extension/geometry-as-dggs-literal>
 		;
 	rdfs:range :dggsLiteral ;
-	skos:definition "The Discrete Global Grid System (DGGS) serialization of a Geometry"@en ;
-	skos:example spec11:C.1.2.4 ;
-	skos:prefLabel "as DGGS"@en ;
+	skos:example spec11:B.1.2.4 ;
+	schema:description "The Discrete Global Grid System (DGGS) serialization of a Geometry"@en ;
+	schema:name "as DGGS"@en ;
 	.
 
 :asGML
@@ -275,9 +290,9 @@
 		<http://www.opengis.net/spec/geosparql/1.1/req/geometry-extension/geometry-as-gml-literal>
 		;
 	rdfs:range :gmlLiteral ;
-	skos:definition "The GML serialization of a Geometry"@en ;
-	skos:example spec11:C.1.2.4 ;
-	skos:prefLabel "as GML"@en ;
+	skos:example spec11:B.1.2.4 ;
+	schema:description "The GML serialization of a Geometry"@en ;
+	schema:name "as GML"@en ;
 	.
 
 :asGeoJSON
@@ -293,9 +308,9 @@
 		;
 	rdfs:range :geoJSONLiteral ;
 	rdfs:seeAlso <https://tools.ietf.org/html/rfc7946> ;
-	skos:definition "The GeoJSON serialization of a Geometry"@en ;
-	skos:example spec11:C.1.2.4 ;
-	skos:prefLabel "as GeoJSON"@en ;
+	skos:example spec11:B.1.2.4 ;
+	schema:description "The GeoJSON serialization of a Geometry"@en ;
+	schema:name "as GeoJSON"@en ;
 	.
 
 :asKML
@@ -311,9 +326,9 @@
 		;
 	rdfs:range :kmlLiteral ;
 	rdfs:seeAlso <https://www.ogc.org/standards/kml> ;
-	skos:definition "The KML serialization of a Geometry"@en ;
-	skos:example spec11:C.1.2.4 ;
-	skos:prefLabel "as KML"@en ;
+	skos:example spec11:B.1.2.4 ;
+	schema:description "The KML serialization of a Geometry"@en ;
+	schema:name "as KML"@en ;
 	.
 
 :asWKT
@@ -329,22 +344,22 @@
 		<http://www.opengis.net/spec/geosparql/1.1/req/geometry-extension/geometry-as-wkt-literal>
 		;
 	rdfs:range :wktLiteral ;
-	skos:definition "The WKT serialization of a Geometry"@en ;
 	skos:example
-		spec11:C.1.1.2.2 ,
-		spec11:C.1.1.2.3 ,
-		spec11:C.1.1.2.4 ,
-		spec11:C.1.1.2.5 ,
-		spec11:C.1.1.2.6 ,
-		spec11:C.1.1.2.8 ,
-		spec11:C.1.1.3.1 ,
-		spec11:C.1.1.3.2 ,
-		spec11:C.1.1.3.3 ,
-		spec11:C.1.2.2 ,
-		spec11:C.2.1 ,
-		spec11:C.2.2.4
+		spec11:B.1.1.2.2 ,
+		spec11:B.1.1.2.3 ,
+		spec11:B.1.1.2.4 ,
+		spec11:B.1.1.2.5 ,
+		spec11:B.1.1.2.6 ,
+		spec11:B.1.1.2.8 ,
+		spec11:B.1.1.3.1 ,
+		spec11:B.1.1.3.2 ,
+		spec11:B.1.1.3.3 ,
+		spec11:B.1.2.2 ,
+		spec11:B.2.1 ,
+		spec11:B.2.2.4
 		;
-	skos:prefLabel "as WKT"@en ;
+	schema:description "The WKT serialization of a Geometry"@en ;
+	schema:name "as WKT"@en ;
 	.
 
 :coordinateDimension
@@ -358,9 +373,9 @@
 		<http://www.opengis.net/spec/geosparql/1.1/req/geometry-extension/geometry-properties>
 		;
 	rdfs:range xsd:integer ;
-	skos:definition "The number of measurements or axes needed to describe the position of this Geometry in a coordinate system."@en ;
-	skos:example spec11:C.1.2.3 ;
-	skos:prefLabel "coordinate dimension"@en ;
+	skos:example spec11:B.1.2.3 ;
+	schema:description "The number of measurements or axes needed to describe the position of this Geometry in a coordinate system."@en ;
+	schema:name "coordinate dimension"@en ;
 	.
 
 :defaultGeometry
@@ -376,13 +391,13 @@
 		;
 	rdfs:range :Geometry ;
 	owl:equivalentProperty :hasDefaultGeometry ;
-	skos:definition "The default Geometry to be used in spatial calculations. It is usually the most detailed Geometry."@en ;
 	skos:example
-		spec11:C.1.2.2 ,
-		spec11:C.2.1
+		spec11:B.1.2.2 ,
+		spec11:B.2.1
 		;
 	skos:note "Duplicate properties defaultGeometry and hasDefaultGeometry exist because of an inconsistency between ontology and documentation in GeoSPARQL 1.0. Only hasDefaultGeometry is described in the documention."@en ;
-	skos:prefLabel "default geometry"@en ;
+	schema:description "The default Geometry to be used in spatial calculations. It is usually the most detailed Geometry."@en ;
+	schema:name "default geometry"@en ;
 	.
 
 :dggsLiteral
@@ -392,13 +407,13 @@
 		<http://www.opengis.net/spec/geosparql/1.1/req/geometry-extension/dggs-literal>
 		;
 	rdfs:seeAlso <http://www.opengis.net/doc/AS/dggs/2.0> ;
-	skos:definition "A textual serialization of a Discrete Global Grid (DGGS) Geometry object."@en ;
 	skos:example
 		' "<https://w3id.org/dggs/auspix> OrdinateList (R3234)"^^<http://www.opengis.net/ont/geosparql#dggsLiteral>' ,
-		spec11:C.1.2.4
+		<http://www.opengis.net/doc/IS/geosparql/1.1#c-1-2-4-%C2%A0-geometry-serializations>
 		;
-	skos:prefLabel "DGGS Literal"@en ;
 	skos:scopeNote "This datatype is not expected to be used directly but to serve as an abstract datatype for a series of specific DGGS literal types, for specific DGGS implementations"@en ;
+	schema:description "A textual serialization of a Discrete Global Grid (DGGS) Geometry object."@en ;
+	schema:name "DGGS Literal"@en ;
 	.
 
 :dimension
@@ -412,9 +427,9 @@
 		<http://www.opengis.net/spec/geosparql/1.1/req/geometry-extension/geometry-properties>
 		;
 	rdfs:range xsd:integer ;
-	skos:definition "The topological dimension of this geometric object, which must be less than or equal to the coordinate dimension. In non-homogeneous collections, this will return the largest topological dimension of the contained objects."@en ;
-	skos:example spec11:C.1.2.3 ;
-	skos:prefLabel "dimension"@en ;
+	skos:example spec11:B.1.2.3 ;
+	schema:description "The topological dimension of this geometric object, which must be less than or equal to the coordinate dimension. In non-homogeneous collections, this will return the largest topological dimension of the contained objects."@en ;
+	schema:name "dimension"@en ;
 	.
 
 :ehContains
@@ -430,8 +445,8 @@
 		;
 	rdfs:range :SpatialObject ;
 	rdfs:seeAlso <http://dbpedia.org/resource/DE-9IM> ;
-	skos:definition "States that the subject SpatialObject spatially contains the object SpatialObject. DE-9IM: T*TFF*FF*"@en ;
-	skos:prefLabel "contains"@en ;
+	schema:description "States that the subject SpatialObject spatially contains the object SpatialObject. DE-9IM: T*TFF*FF*"@en ;
+	schema:name "contains"@en ;
 	.
 
 :ehCoveredBy
@@ -447,8 +462,8 @@
 		;
 	rdfs:range :SpatialObject ;
 	rdfs:seeAlso <http://dbpedia.org/resource/DE-9IM> ;
-	skos:definition "States that the subject SpatialObject is spatially covered by the object SpatialObject. DE-9IM: TFF*TFT**"@en ;
-	skos:prefLabel "covered by"@en ;
+	schema:description "States that the subject SpatialObject is spatially covered by the object SpatialObject. DE-9IM: TFF*TFT**"@en ;
+	schema:name "covered by"@en ;
 	.
 
 :ehCovers
@@ -464,8 +479,8 @@
 		;
 	rdfs:range :SpatialObject ;
 	rdfs:seeAlso <http://dbpedia.org/resource/DE-9IM> ;
-	skos:definition "States that the subject SpatialObject spatially covers the object SpatialObject. DE-9IM: T*TFT*FF*"@en ;
-	skos:prefLabel "covers"@en ;
+	schema:description "States that the subject SpatialObject spatially covers the object SpatialObject. DE-9IM: T*TFT*FF*"@en ;
+	schema:name "covers"@en ;
 	.
 
 :ehDisjoint
@@ -482,8 +497,8 @@
 	rdfs:range :SpatialObject ;
 	rdfs:seeAlso <http://dbpedia.org/resource/DE-9IM> ;
 	owl:equivalentProperty :sfDisjoint ;
-	skos:definition "States that the subject SpatialObject is spatially disjoint from the object SpatialObject. DE-9IM: FF*FF****"@en ;
-	skos:prefLabel "disjoint"@en ;
+	schema:description "States that the subject SpatialObject is spatially disjoint from the object SpatialObject. DE-9IM: FF*FF****"@en ;
+	schema:name "disjoint"@en ;
 	.
 
 :ehEquals
@@ -500,8 +515,8 @@
 	rdfs:range :SpatialObject ;
 	rdfs:seeAlso <http://dbpedia.org/resource/DE-9IM> ;
 	owl:equivalentProperty :sfEquals ;
-	skos:definition "States that the subject SpatialObject spatially equals the object SpatialObject. DE-9IM: TFFFTFFFT"@en ;
-	skos:prefLabel "equals"@en ;
+	schema:description "States that the subject SpatialObject spatially equals the object SpatialObject. DE-9IM: TFFFTFFFT"@en ;
+	schema:name "equals"@en ;
 	.
 
 :ehInside
@@ -517,8 +532,8 @@
 		;
 	rdfs:range :SpatialObject ;
 	rdfs:seeAlso <http://dbpedia.org/resource/DE-9IM> ;
-	skos:definition "States that the subject SpatialObject is spatially inside the object SpatialObject. DE-9IM: TFF*FFT**"@en ;
-	skos:prefLabel "inside"@en ;
+	schema:description "States that the subject SpatialObject is spatially inside the object SpatialObject. DE-9IM: TFF*FFT**"@en ;
+	schema:name "inside"@en ;
 	.
 
 :ehMeet
@@ -535,8 +550,8 @@
 	rdfs:range :SpatialObject ;
 	rdfs:seeAlso <http://dbpedia.org/resource/DE-9IM> ;
 	owl:equivalentProperty :sfTouches ;
-	skos:definition "States that the subject SpatialObject spatially meets the object SpatialObject. DE-9IM: FT******* ^ F**T***** ^ F***T****"@en ;
-	skos:prefLabel "meet"@en ;
+	schema:description "States that the subject SpatialObject spatially meets the object SpatialObject. DE-9IM: FT******* ^ F**T***** ^ F***T****"@en ;
+	schema:name "meet"@en ;
 	.
 
 :ehOverlap
@@ -552,8 +567,8 @@
 		;
 	rdfs:range :SpatialObject ;
 	rdfs:seeAlso <http://dbpedia.org/resource/DE-9IM> ;
-	skos:definition "States that the subject SpatialObject spatially overlaps the object SpatialObject. DE-9IM: T*T***T**"@en ;
-	skos:prefLabel "overlap"@en ;
+	schema:description "States that the subject SpatialObject spatially overlaps the object SpatialObject. DE-9IM: T*T***T**"@en ;
+	schema:name "overlap"@en ;
 	.
 
 :geoJSONLiteral
@@ -563,9 +578,9 @@
 		<http://www.opengis.net/spec/geosparql/1.1/req/geometry-extension/geojson-literal>
 		;
 	rdfs:seeAlso <https://tools.ietf.org/html/rfc7946> ;
-	skos:definition "A GeoJSON serialization of a Geometry object."@en ;
-	skos:example spec11:C.1.2.4 ;
-	skos:prefLabel "GeoJSON Literal"@en ;
+	skos:example <http://www.opengis.net/doc/IS/geosparql/1.1#c-1-2-4-%C2%A0-geometry-serializations> ;
+	schema:description "A GeoJSON serialization of a Geometry object."@en ;
+	schema:name "GeoJSON Literal"@en ;
 	.
 
 :gmlLiteral
@@ -575,10 +590,10 @@
 		<http://www.opengis.net/spec/geosparql/1.0/req/geometry-extension/gml-literal> ,
 		<http://www.opengis.net/spec/geosparql/1.1/req/geometry-extension/gml-literal>
 		;
-	rdfs:seeAlso <https://portal.ogc.org/files/?artifact_id=20509> ;
-	skos:definition "A GML serialization of a Geometry object."@en ;
-	skos:example spec11:C.1.2.4 ;
-	skos:prefLabel "GML Literal"@en ;
+	rdfs:seeAlso <http://www.opengis.net/doc/IS/geosparql/1.1#c-1-2-4-%C2%A0-geometry-serializations> ;
+	skos:example <http://www.opengis.net/doc/IS/geosparql/1.1#c-1-2-4-%C2%A0-geometry-serializations> ;
+	schema:description "A GML serialization of a Geometry object."@en ;
+	schema:name "GML Literal"@en ;
 	.
 
 :hasArea
@@ -592,12 +607,12 @@
 		<http://www.opengis.net/ont/geosparql#> ,
 		<http://www.opengis.net/spec/geosparql/1.1/req/geometry-extension/spatial-object-properties>
 		;
-	skos:definition "The area of a Spatial Object."@en ;
 	skos:example
-		spec11:C.1.1.2.4 ,
-		spec11:C.1.2.2
+		spec11:B.1.1.2.4 ,
+		spec11:B.1.2.2
 		;
-	skos:prefLabel "has area"@en ;
+	schema:description "The area of a Spatial Object."@en ;
+	schema:name "has area"@en ;
 	.
 
 :hasBoundingBox
@@ -612,10 +627,10 @@
 		<http://www.opengis.net/spec/geosparql/1.1/req/geometry-extension/feature-properties>
 		;
 	rdfs:range :Geometry ;
-	skos:definition "The minimum or smallest bounding or enclosing box of a given Feature."@en ;
-	skos:example spec11:C.1.2.2 ;
-	skos:prefLabel "has bounding box"@en ;
+	skos:example spec11:B.1.2.2 ;
 	skos:scopeNote "The target is a Geometry that defines a rectilinear region whose edges are aligned with the axes of the coordinate reference system, which exactly contains the Feature, for example an instance of http://www.opengis.net/ont/sf#envelope."@en ;
+	schema:description "The minimum or smallest bounding or enclosing box of a given Feature."@en ;
+	schema:name "has bounding box"@en ;
 	.
 
 :hasCentroid
@@ -630,10 +645,10 @@
 		<http://www.opengis.net/spec/geosparql/1.1/req/geometry-extension/feature-properties>
 		;
 	rdfs:range :Geometry ;
-	skos:definition "The arithmetic mean position of all the Geometry points of a given Feature."@en ;
-	skos:example spec11:C.1.2.2 ;
-	skos:prefLabel "has centroid"@en ;
+	skos:example spec11:B.1.2.2 ;
 	skos:scopeNote "The target Geometry shall describe a point, for example an instance of http://www.opengis.net/ont/sf#Point."@en ;
+	schema:description "The arithmetic mean position of all the Geometry points of a given Feature."@en ;
+	schema:name "has centroid"@en ;
 	.
 
 :hasDefaultGeometry
@@ -650,9 +665,9 @@
 		;
 	rdfs:range :Geometry ;
 	owl:equivalentProperty :defaultGeometry ;
-	skos:definition "The default Geometry to be used in spatial calculations. It is usually the most detailed Geometry."@en ;
 	skos:note "Duplicate properties defaultGeometry and hasDefaultGeometry exist because of an inconsistency between ontology and documentation in GeoSPARQL 1.0. Only hasDefaultGeometry is described in the documention."@en ;
-	skos:prefLabel "has default geometry"@en ;
+	schema:description "The default Geometry to be used in spatial calculations. It is usually the most detailed Geometry."@en ;
+	schema:name "has default geometry"@en ;
 	.
 
 :hasGeometry
@@ -667,22 +682,22 @@
 		<http://www.opengis.net/spec/geosparql/1.1/req/geometry-extension/feature-properties>
 		;
 	rdfs:range :Geometry ;
-	skos:definition "A spatial representation for a given Feature."@en ;
 	skos:example
-		spec11:C.1.1.2.2 ,
-		spec11:C.1.1.2.3 ,
-		spec11:C.1.1.2.4 ,
-		spec11:C.1.1.2.5 ,
-		spec11:C.1.1.2.6 ,
-		spec11:C.1.1.2.8 ,
-		spec11:C.1.1.3.2 ,
-		spec11:C.1.1.3.3 ,
-		spec11:C.1.2.2 ,
-		spec11:C.1.2.3 ,
-		spec11:C.1.2.4 ,
-		spec11:C.2
+		spec11:B.1.1.2.2 ,
+		spec11:B.1.1.2.3 ,
+		spec11:B.1.1.2.4 ,
+		spec11:B.1.1.2.5 ,
+		spec11:B.1.1.2.6 ,
+		spec11:B.1.1.2.8 ,
+		spec11:B.1.1.3.2 ,
+		spec11:B.1.1.3.3 ,
+		spec11:B.1.2.2 ,
+		spec11:B.1.2.3 ,
+		spec11:B.1.2.4 ,
+		spec11:B.2
 		;
-	skos:prefLabel "has geometry"@en ;
+	schema:description "A spatial representation for a given Feature."@en ;
+	schema:name "has geometry"@en ;
 	.
 
 :hasLength
@@ -696,12 +711,12 @@
 		<http://www.opengis.net/ont/geosparql#> ,
 		<http://www.opengis.net/spec/geosparql/1.1/req/geometry-extension/spatial-object-properties>
 		;
-	skos:definition "The length of a Spatial Object."@en ;
 	skos:example
-		spec11:C.1.1.2.7 ,
-		spec11:C.1.2.2
+		spec11:B.1.1.2.7 ,
+		spec11:B.1.2.2
 		;
-	skos:prefLabel "has length"@en ;
+	schema:description "The length of a Spatial Object."@en ;
+	schema:name "has length"@en ;
 	.
 
 :hasMetricArea
@@ -716,14 +731,14 @@
 		<http://www.opengis.net/spec/geosparql/1.1/req/geometry-extension/spatial-object-properties>
 		;
 	rdfs:range xsd:double ;
-	skos:definition "The area of a Spatial Object in square meters."@en ;
 	skos:example
-		spec11:C.1.1.2.3 ,
-		spec11:C.1.1.2.9 ,
-		spec11:C.1.1.3.3 ,
-		spec11:C.1.2.2
+		spec11:B.1.1.2.3 ,
+		spec11:B.1.1.2.9 ,
+		spec11:B.1.1.3.3 ,
+		spec11:B.1.2.2
 		;
-	skos:prefLabel "has area in square meters"@en ;
+	schema:description "The area of a Spatial Object in square meters."@en ;
+	schema:name "has area in square meters"@en ;
 	.
 
 :hasMetricLength
@@ -738,9 +753,9 @@
 		<http://www.opengis.net/spec/geosparql/1.1/req/geometry-extension/spatial-object-properties>
 		;
 	rdfs:range xsd:double ;
-	skos:definition "The length of a Spatial Object in meters."@en ;
-	skos:example spec11:C.1.2.2 ;
-	skos:prefLabel "has length in meters"@en ;
+	skos:example spec11:B.1.2.2 ;
+	schema:description "The length of a Spatial Object in meters."@en ;
+	schema:name "has length in meters"@en ;
 	.
 
 :hasMetricPerimeterLength
@@ -755,9 +770,9 @@
 		<http://www.opengis.net/spec/geosparql/1.1/req/geometry-extension/spatial-object-properties>
 		;
 	rdfs:range xsd:double ;
-	skos:definition "The length of the perimeter of a Spatial Object in meters."@en ;
-	skos:example spec11:C.1.1.1.2 ;
-	skos:prefLabel "has perimeter length in meters"@en ;
+	skos:example spec11:B.1.1.1.2 ;
+	schema:description "The length of the perimeter of a Spatial Object in meters."@en ;
+	schema:name "has perimeter length in meters"@en ;
 	.
 
 :hasMetricSize
@@ -771,8 +786,8 @@
 		<http://www.opengis.net/spec/geosparql/1.1/req/geometry-extension/spatial-object-properties>
 		;
 	rdfs:range xsd:double ;
-	skos:definition "Subproperties of this property are used to indicate the size of a Spatial Object, as a measurement or estimate of one or more dimensions of the Spatial Object's spatial presence. Units are always metric (meter, square meter or cubic meter)."@en ;
-	skos:prefLabel "has metric size"@en ;
+	schema:description "Subproperties of this property are used to indicate the size of a Spatial Object, as a measurement or estimate of one or more dimensions of the Spatial Object's spatial presence. Units are always metric (meter, square meter or cubic meter)."@en ;
+	schema:name "has metric size"@en ;
 	.
 
 :hasMetricSpatialAccuracy
@@ -786,10 +801,10 @@
 		<http://www.opengis.net/spec/geosparql/1.1/req/geometry-extension/geometry-properties>
 		;
 	rdfs:range xsd:double ;
-	skos:definition "The positional accuracy of the coordinates of a Geometry in meters."@en ;
-	skos:example spec11:C.1.2.3 ;
+	skos:example spec11:B.1.2.3 ;
 	skos:note "Spatial accuracy is applicable when a Geometry is used to represent a Feature. It is expressed as a distance that indicates the truthfullness of the positions (coordinates) that define the Geometry. In this case accuracy defines a zone surrounding each coordinate within wich the real positions are known to be. The accuracy value defines this zone as a distance from the coordinate(s) in all directions (e.g. a line, a circle or a sphere, depending on spatial dimension)."@en ;
-	skos:prefLabel "has spatial accuracy in meters"@en ;
+	schema:description "The positional accuracy of the coordinates of a Geometry in meters."@en ;
+	schema:name "has spatial accuracy in meters"@en ;
 	.
 
 :hasMetricSpatialResolution
@@ -803,13 +818,13 @@
 		<http://www.opengis.net/spec/geosparql/1.1/req/geometry-extension/geometry-properties>
 		;
 	rdfs:range xsd:double ;
-	skos:definition "The spatial resolution of a Geometry in meters."@en ;
 	skos:example
-		spec11:C.1.1.2.6 ,
-		spec11:C.1.2.2
+		spec11:B.1.1.2.6 ,
+		spec11:B.1.2.2
 		;
 	skos:note "Spatial resolution specifies the level of detail of a Geometry. It the smallest dinstinguishable distance between spatially adjacent coordinates."@en ;
-	skos:prefLabel "has spatial resolution in meters"@en ;
+	schema:description "The spatial resolution of a Geometry in meters."@en ;
+	schema:name "has spatial resolution in meters"@en ;
 	.
 
 :hasMetricVolume
@@ -824,12 +839,12 @@
 		<http://www.opengis.net/spec/geosparql/1.1/req/geometry-extension/spatial-object-properties>
 		;
 	rdfs:range xsd:double ;
-	skos:definition "The volume of a Spatial Object in cubic meters."@en ;
 	skos:example
-		spec11:C.1.1.2.9 ,
-		spec11:C.1.2.2
+		spec11:B.1.1.2.9 ,
+		spec11:B.1.2.2
 		;
-	skos:prefLabel "has volume in cubic meters"@en ;
+	schema:description "The volume of a Spatial Object in cubic meters."@en ;
+	schema:name "has volume in cubic meters"@en ;
 	.
 
 :hasPerimeterLength
@@ -843,9 +858,9 @@
 		<http://www.opengis.net/ont/geosparql#> ,
 		<http://www.opengis.net/spec/geosparql/1.1/req/geometry-extension/spatial-object-properties>
 		;
-	skos:definition "The length of the perimeter of a Spatial Object."@en ;
-	skos:example spec11:C.1.1.1.2 ;
-	skos:prefLabel "has perimeter length"@en ;
+	skos:example spec11:B.1.1.1.2 ;
+	schema:description "The length of the perimeter of a Spatial Object."@en ;
+	schema:name "has perimeter length"@en ;
 	.
 
 :hasSerialization
@@ -860,9 +875,9 @@
 		<http://www.opengis.net/spec/geosparql/1.1/req/geometry-extension/geometry-properties>
 		;
 	rdfs:range rdfs:Literal ;
-	skos:definition "Connects a Geometry object with its text-based serialization."@en ;
-	skos:example spec11:C.1.2.3 ;
-	skos:prefLabel "has serialization"@en ;
+	skos:example spec11:B.1.2.3 ;
+	schema:description "Connects a Geometry object with its text-based serialization."@en ;
+	schema:name "has serialization"@en ;
 	.
 
 :hasSize
@@ -876,9 +891,9 @@
 		<http://www.opengis.net/spec/geosparql/1.0/req/topology-vocab-extension/spatial-object-properties> ,
 		<http://www.opengis.net/spec/geosparql/1.1/req/topology-vocab-extension/spatial-object-properties>
 		;
-	skos:definition "Subproperties of this property are used to indicate the size of a Spatial Object as a measurement or estimate of one or more dimensions of the Spatial Object's spatial presence."@en ;
 	skos:note "The recommended way to specify size is by using a subproperty of hasMetricSize. Subproperties of hasSize can be used if more complex expressions are necessary, for example if the unit of length can not be converted to meter, or if additional data are needed to describe the measurement or estimate."@en ;
-	skos:prefLabel "has size"@en ;
+	schema:description "Subproperties of this property are used to indicate the size of a Spatial Object as a measurement or estimate of one or more dimensions of the Spatial Object's spatial presence."@en ;
+	schema:name "has size"@en ;
 	.
 
 :hasSpatialAccuracy
@@ -891,10 +906,10 @@
 		<http://www.opengis.net/ont/geosparql#> ,
 		<http://www.opengis.net/spec/geosparql/1.1/req/geometry-extension/geometry-properties>
 		;
-	skos:definition "The positional accuracy of the coordinates of a Geometry."@en ;
-	skos:example spec11:C.1.2.3 ;
+	skos:example spec11:B.1.2.3 ;
 	skos:note "Spatial accuracy is applicable when a Geometry is used to represent a Feature. It is expressed as a distance that indicates the truthfullness of the positions (coordinates) that define the Geometry. In this case accuracy defines a zone surrounding each coordinate within wich the real positions are known to be. The accuracy value defines this zone as a distance from the coordinate(s) in all directions (e.g. a line, a circle or a sphere, depending on spatial dimension)."@en ;
-	skos:prefLabel "has spatial accuracy"@en ;
+	schema:description "The positional accuracy of the coordinates of a Geometry."@en ;
+	schema:name "has spatial accuracy"@en ;
 	.
 
 :hasSpatialResolution
@@ -907,10 +922,10 @@
 		<http://www.opengis.net/ont/geosparql#> ,
 		<http://www.opengis.net/spec/geosparql/1.1/req/geometry-extension/feature-properties>
 		;
-	skos:definition "The spatial resolution of a Geometry."@en ;
-	skos:example spec11:C.1.2.2 ;
+	skos:example spec11:B.1.2.2 ;
 	skos:note "Spatial resolution specifies the level of detail of a Geometry. It the smallest distinguishable distance between spatially adjacent coordinates."@en ;
-	skos:prefLabel "has spatial resolution"@en ;
+	schema:description "The spatial resolution of a Geometry."@en ;
+	schema:name "has spatial resolution"@en ;
 	.
 
 :hasVolume
@@ -924,9 +939,9 @@
 		<http://www.opengis.net/ont/geosparql#> ,
 		<http://www.opengis.net/spec/geosparql/1.1/req/geometry-extension/spatial-object-properties>
 		;
-	skos:definition "The volume of a three-dimensional Spatial Object."@en ;
-	skos:example spec11:C.1.2.2 ;
-	skos:prefLabel "has volume"@en ;
+	skos:example spec11:B.1.2.2 ;
+	schema:description "The volume of a three-dimensional Spatial Object."@en ;
+	schema:name "has volume"@en ;
 	.
 
 :isEmpty
@@ -941,9 +956,9 @@
 		<http://www.opengis.net/spec/geosparql/1.1/req/geometry-extension/geometry-properties>
 		;
 	rdfs:range xsd:boolean ;
-	skos:definition "(true) if this geometric object is the empty Geometry. If true, then this geometric object represents the empty point set for the coordinate space."@en ;
-	skos:example spec11:C.1.2.3 ;
-	skos:prefLabel "is empty"@en ;
+	skos:example spec11:B.1.2.3 ;
+	schema:description "(true) if this geometric object is the empty Geometry. If true, then this geometric object represents the empty point set for the coordinate space."@en ;
+	schema:name "is empty"@en ;
 	.
 
 :isSimple
@@ -959,9 +974,9 @@
 		;
 	rdfs:range xsd:boolean ;
 	rdfs:seeAlso <https://portal.ogc.org/files/?artifact_id=25355> ;
-	skos:definition "(true) if this geometric object has no anomalous geometric points, such as self intersection or self tangency."@en ;
-	skos:example spec11:C.1.2.3 ;
-	skos:prefLabel "is simple"@en ;
+	skos:example spec11:B.1.2.3 ;
+	schema:description "(true) if this geometric object has no anomalous geometric points, such as self intersection or self tangency."@en ;
+	schema:name "is simple"@en ;
 	.
 
 :kmlLiteral
@@ -971,9 +986,9 @@
 		<http://www.opengis.net/spec/geosparql/1.1/req/geometry-extension/kml-literal>
 		;
 	rdfs:seeAlso <https://www.ogc.org/standards/kml/> ;
-	skos:definition "A KML serialization of a Geometry object."@en ;
-	skos:example spec11:C.1.2.4 ;
-	skos:prefLabel "KML Literal"@en ;
+	skos:example <http://www.opengis.net/doc/IS/geosparql/1.1#c-1-2-4-%C2%A0-geometry-serializations> ;
+	schema:description "A KML serialization of a Geometry object."@en ;
+	schema:name "KML Literal"@en ;
 	.
 
 :rcc8dc
@@ -989,8 +1004,8 @@
 		;
 	rdfs:range :SpatialObject ;
 	rdfs:seeAlso <http://dbpedia.org/resource/DE-9IM> ;
-	skos:definition "States that the subject SpatialObject is spatially disjoint from the object SpatialObject. DE-9IM: FFTFFTTTT"@en ;
-	skos:prefLabel "disconnected"@en ;
+	schema:description "States that the subject SpatialObject is spatially disjoint from the object SpatialObject. DE-9IM: FFTFFTTTT"@en ;
+	schema:name "disconnected"@en ;
 	.
 
 :rcc8ec
@@ -1006,8 +1021,8 @@
 		;
 	rdfs:range :SpatialObject ;
 	rdfs:seeAlso <http://dbpedia.org/resource/DE-9IM> ;
-	skos:definition "States that the subject SpatialObject spatially meets the object SpatialObject. DE-9IM: FFTFTTTTT"@en ;
-	skos:prefLabel "externally connected"@en ;
+	schema:description "States that the subject SpatialObject spatially meets the object SpatialObject. DE-9IM: FFTFTTTTT"@en ;
+	schema:name "externally connected"@en ;
 	.
 
 :rcc8eq
@@ -1023,8 +1038,8 @@
 		;
 	rdfs:range :SpatialObject ;
 	rdfs:seeAlso <http://dbpedia.org/resource/DE-9IM> ;
-	skos:definition "States that the subject SpatialObject spatially equals the object SpatialObject. DE-9IM: TFFFTFFFT"@en ;
-	skos:prefLabel "equals"@en ;
+	schema:description "States that the subject SpatialObject spatially equals the object SpatialObject. DE-9IM: TFFFTFFFT"@en ;
+	schema:name "equals"@en ;
 	.
 
 :rcc8ntpp
@@ -1040,8 +1055,8 @@
 		;
 	rdfs:range :SpatialObject ;
 	rdfs:seeAlso <http://dbpedia.org/resource/DE-9IM> ;
-	skos:definition "States that the subject SpatialObject is spatially inside the object SpatialObject. DE-9IM: TFFTFFTTT"@en ;
-	skos:prefLabel "non-tangential proper part"@en ;
+	schema:description "States that the subject SpatialObject is spatially inside the object SpatialObject. DE-9IM: TFFTFFTTT"@en ;
+	schema:name "non-tangential proper part"@en ;
 	.
 
 :rcc8ntppi
@@ -1057,8 +1072,8 @@
 		;
 	rdfs:range :SpatialObject ;
 	rdfs:seeAlso <http://dbpedia.org/resource/DE-9IM> ;
-	skos:definition "States that the subject SpatialObject spatially contains the object SpatialObject. DE-9IM: TTTFFTFFT"@en ;
-	skos:prefLabel "non-tangential proper part inverse"@en ;
+	schema:description "States that the subject SpatialObject spatially contains the object SpatialObject. DE-9IM: TTTFFTFFT"@en ;
+	schema:name "non-tangential proper part inverse"@en ;
 	.
 
 :rcc8po
@@ -1074,8 +1089,8 @@
 		;
 	rdfs:range :SpatialObject ;
 	rdfs:seeAlso <http://dbpedia.org/resource/DE-9IM> ;
-	skos:definition "States that the subject SpatialObject spatially overlaps the object SpatialObject. DE-9IM: TTTTTTTTT"@en ;
-	skos:prefLabel "partially overlapping"@en ;
+	schema:description "States that the subject SpatialObject spatially overlaps the object SpatialObject. DE-9IM: TTTTTTTTT"@en ;
+	schema:name "partially overlapping"@en ;
 	.
 
 :rcc8tpp
@@ -1091,8 +1106,8 @@
 		;
 	rdfs:range :SpatialObject ;
 	rdfs:seeAlso <http://dbpedia.org/resource/DE-9IM> ;
-	skos:definition "States that the subject SpatialObject is spatially covered by the object SpatialObject. DE-9IM: TFFTTFTTT"@en ;
-	skos:prefLabel "tangential proper part"@en ;
+	schema:description "States that the subject SpatialObject is spatially covered by the object SpatialObject. DE-9IM: TFFTTFTTT"@en ;
+	schema:name "tangential proper part"@en ;
 	.
 
 :rcc8tppi
@@ -1108,8 +1123,8 @@
 		;
 	rdfs:range :SpatialObject ;
 	rdfs:seeAlso <http://dbpedia.org/resource/DE-9IM> ;
-	skos:definition "States that the subject SpatialObject spatially covers the object SpatialObject. DE-9IM: TTTFTTFFT"@en ;
-	skos:prefLabel "tangential proper part inverse"@en ;
+	schema:description "States that the subject SpatialObject spatially covers the object SpatialObject. DE-9IM: TTTFTTFFT"@en ;
+	schema:name "tangential proper part inverse"@en ;
 	.
 
 :sfContains
@@ -1125,8 +1140,8 @@
 		;
 	rdfs:range :SpatialObject ;
 	rdfs:seeAlso <http://dbpedia.org/resource/DE-9IM> ;
-	skos:definition "States that the subject SpatialObject spatially contains the object SpatialObject. DE-9IM: T*****FF*"@en ;
-	skos:prefLabel "contains"@en ;
+	schema:description "States that the subject SpatialObject spatially contains the object SpatialObject. DE-9IM: T*****FF*"@en ;
+	schema:name "contains"@en ;
 	.
 
 :sfCrosses
@@ -1142,8 +1157,8 @@
 		;
 	rdfs:range :SpatialObject ;
 	rdfs:seeAlso <http://dbpedia.org/resource/DE-9IM> ;
-	skos:definition "States that the subject SpatialObject spatially crosses the object SpatialObject. DE-9IM: T*T******"@en ;
-	skos:prefLabel "crosses"@en ;
+	schema:description "States that the subject SpatialObject spatially crosses the object SpatialObject. DE-9IM: T*T******"@en ;
+	schema:name "crosses"@en ;
 	.
 
 :sfDisjoint
@@ -1160,8 +1175,8 @@
 	rdfs:range :SpatialObject ;
 	rdfs:seeAlso <http://dbpedia.org/resource/DE-9IM> ;
 	owl:equivalentProperty :ehDisjoint ;
-	skos:definition "States that the subject SpatialObject is spatially disjoint from the object SpatialObject. DE-9IM: FF*FF****"@en ;
-	skos:prefLabel "disjoint"@en ;
+	schema:description "States that the subject SpatialObject is spatially disjoint from the object SpatialObject. DE-9IM: FF*FF****"@en ;
+	schema:name "disjoint"@en ;
 	.
 
 :sfEquals
@@ -1178,8 +1193,8 @@
 	rdfs:range :SpatialObject ;
 	rdfs:seeAlso <http://dbpedia.org/resource/DE-9IM> ;
 	owl:equivalentProperty :ehEquals ;
-	skos:definition "States that the subject SpatialObject spatially equals the object SpatialObject. DE-9IM: TFFFTFFFT"@en ;
-	skos:prefLabel "equals"@en ;
+	schema:description "States that the subject SpatialObject spatially equals the object SpatialObject. DE-9IM: TFFFTFFFT"@en ;
+	schema:name "equals"@en ;
 	.
 
 :sfIntersects
@@ -1195,8 +1210,8 @@
 		;
 	rdfs:range :SpatialObject ;
 	rdfs:seeAlso <http://dbpedia.org/resource/DE-9IM> ;
-	skos:definition "States that the subject SpatialObject is not spatially disjoint from the object SpatialObject. DE-9IM: T******** ^ *T******* ^ ***T***** ^ ****T****"@en ;
-	skos:prefLabel "intersects"@en ;
+	schema:description "States that the subject SpatialObject is not spatially disjoint from the object SpatialObject. DE-9IM: T******** ^ *T******* ^ ***T***** ^ ****T****"@en ;
+	schema:name "intersects"@en ;
 	.
 
 :sfOverlaps
@@ -1212,8 +1227,8 @@
 		;
 	rdfs:range :SpatialObject ;
 	rdfs:seeAlso <http://dbpedia.org/resource/DE-9IM> ;
-	skos:definition "States that the subject SpatialObject spatially overlaps the object SpatialObject. DE-9IM: T*T***T**"@en ;
-	skos:prefLabel "overlaps"@en ;
+	schema:description "States that the subject SpatialObject spatially overlaps the object SpatialObject. DE-9IM: T*T***T**"@en ;
+	schema:name "overlaps"@en ;
 	.
 
 :sfTouches
@@ -1230,8 +1245,8 @@
 	rdfs:range :SpatialObject ;
 	rdfs:seeAlso <http://dbpedia.org/resource/DE-9IM> ;
 	owl:equivalentProperty :ehMeet ;
-	skos:definition "States that the subject SpatialObject spatially touches the object SpatialObject. DE-9IM: FT******* ^ F**T***** ^ F***T****"@en ;
-	skos:prefLabel "touches"@en ;
+	schema:description "States that the subject SpatialObject spatially touches the object SpatialObject. DE-9IM: FT******* ^ F**T***** ^ F***T****"@en ;
+	schema:name "touches"@en ;
 	.
 
 :sfWithin
@@ -1247,8 +1262,8 @@
 		;
 	rdfs:range :SpatialObject ;
 	rdfs:seeAlso <http://dbpedia.org/resource/DE-9IM> ;
-	skos:definition "States that the subject SpatialObject is spatially within the object SpatialObject. DE-9IM: T*F**F***"@en ;
-	skos:prefLabel "within"@en ;
+	schema:description "States that the subject SpatialObject is spatially within the object SpatialObject. DE-9IM: T*F**F***"@en ;
+	schema:name "within"@en ;
 	.
 
 :spatialDimension
@@ -1263,9 +1278,9 @@
 		<http://www.opengis.net/spec/geosparql/1.1/req/geometry-extension/geometry-properties>
 		;
 	rdfs:range xsd:integer ;
-	skos:definition "The number of measurements or axes needed to describe the spatial position of this Geometry in a coordinate system."@en ;
-	skos:example spec11:C.1.2.3 ;
-	skos:prefLabel "spatial dimension"@en ;
+	skos:example spec11:B.1.2.3 ;
+	schema:description "The number of measurements or axes needed to describe the spatial position of this Geometry in a coordinate system."@en ;
+	schema:name "spatial dimension"@en ;
 	.
 
 :wktLiteral
@@ -1275,9 +1290,9 @@
 		<http://www.opengis.net/spec/geosparql/1.0/req/geometry-extension/wkt-literal> ,
 		<http://www.opengis.net/spec/geosparql/1.1/req/geometry-extension/wkt-literal>
 		;
-	rdfs:seeAlso <https://portal.ogc.org/files/?artifact_id=25355> ;
-	skos:definition "A Well-known Text serialization of a Geometry object."@en ;
-	skos:example spec11:C.2.2.2 ;
-	skos:prefLabel "Well-known Text Literal"@en ;
+	rdfs:seeAlso <http://www.opengis.net/doc/IS/geosparql/1.1#c-1-2-4-%C2%A0-geometry-serializations> ;
+	skos:example <http://www.opengis.net/doc/IS/geosparql/1.1#c-1-2-4-%C2%A0-geometry-serializations> ;
+	schema:description "A Well-known Text serialization of a Geometry object."@en ;
+	schema:name "Well-known Text Literal"@en ;
 	.
 
