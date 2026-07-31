@@ -29,7 +29,7 @@ RDF_TOOLKIT_JAR := $(uco_srcdir)/lib/rdf-toolkit.jar
 # must only be files in this directory.
 normalized_ttls := \
   formatted-geo.ttl \
-  formatted-validator.ttl
+  formatted-geo-validator.ttl
 
 all: \
   catalog-v001.xml
@@ -64,7 +64,7 @@ clean:
 	  catalog-v001.xml
 
 formatted-geo.ttl: \
-  ogc-geosparql/vocabularies/geo.ttl \
+  geosemantics-semantic-resources/resources/geosparql-swg/geosparql-1.1/ontologies/geo.ttl \
   $(RDF_TOOLKIT_JAR) \
   $(top_srcdir)/.venv.done.log
 	source $(top_srcdir)/venv/bin/activate \
@@ -79,8 +79,8 @@ formatted-geo.ttl: \
 	  --target-format turtle
 	mv _$@ $@
 
-formatted-validator.ttl: \
-  ogc-geosparql/vocabularies/validator.ttl \
+formatted-geo-validator.ttl: \
+  geosemantics-semantic-resources/resources/geosparql-swg/geosparql-1.1/validators/geo-validator.ttl \
   $(RDF_TOOLKIT_JAR) \
   $(top_srcdir)/.venv.done.log
 	source $(top_srcdir)/venv/bin/activate \
